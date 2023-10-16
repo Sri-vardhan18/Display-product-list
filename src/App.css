@@ -1,38 +1,136 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* CSS for product container */
+.productContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 10px; /* Adjust as needed */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px; /* Set the desired width */
+}
+
+/* CSS for the product image */
+.Card img {
+  width: 100px; /* Make the image fill its container */
+  height: 200px; /* Maintain aspect ratio */
+}
+
+/* CSS for the product name */
+.Card h5 {
+  margin: 10px 0;
+}
+
+/* CSS for the product price */
+.Card span {
+  font-weight: bold;
+  color: #007BFF;
+}
+
+/* CSS for the "addToCart" button */
+.productContainer button {
+  background-color: #007BFF;
   color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.productList {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between;
+    */ 
+  gap: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.productContainer button:hover {
+  background-color: #0056b3;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black; /* Optional background color */
+  color: white; /* Optional text color */
+  padding: 10px;
+} 
+.navbar h2 {
+  margin: 0;
+  font-size: 24px; 
+  /* Adjust the font size as needed */ 
+  padding-left: 20px;
+}
+.navbar p{
+  font-size: 20px;
+  padding-right: 50px;
+
+} 
+
+/* CSS for the cart modal container */
+.cartModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* CSS for the cart modal content */
+.cartContent {
+  background: white;
+  padding: 20px;
+  width: 500px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Style for the "Close Cart" button */
+.cartContent button {
+  background: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cartContent button:hover {
+  background: #0056b3;
+} 
+
+/* .cartContent ul {
+  list-style-type: none;
+  padding: 0;
+} */
+
+.boxModel {
+  list-style-type: none;
+  
+}
+
+.buttonClass {
+  background-color: gray;
+  color: black;
+} 
+
+.product-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  background-color: #fff;
 }
