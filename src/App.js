@@ -1,5 +1,5 @@
 
-import ProductList from './Product';
+import ProductList from './ProductList';
 function App() {
   return (
     <div >
