@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import ProductCard from './ProductCard';
+// import ProductCard from './ProductCard';
 import Navbar from './Navbar';
+import ProductDisplay from './ProductDisplay';
 import Model from './Model';
 
 const ProductList = () => {
@@ -64,14 +65,7 @@ const ProductList = () => {
   return (
     <div>
       <Navbar onOpenCart={openCart} counts={count}/>
-      <div className="productList">
-        {products.map((item) => (
-          <div key={item.id} className="productContainer">
-            <ProductCard item={item} addToCart={addToCart} /> 
-            
-          </div>
-        ))}
-      </div>
+      <ProductDisplay  addToCart={addToCart} products={products}/>
       {showCart && (
         <Model carts={cart} popup={closeCart} removeitem={removeFromCart} />
 
