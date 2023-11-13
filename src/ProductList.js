@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-// import ProductCard from './ProductCard';
 import Navbar from './Navbar';
 import ProductDisplay from './ProductDisplay';
 import Model from './Model';
+import  ReactDOM  from 'react-dom';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -57,6 +57,7 @@ const ProductList = () => {
     setShowCart(true);
   };
 
+  const portal=document.getElementById('portal')
   const closeCart = () => {
     setShowCart(false);
     setCount(0)
@@ -66,8 +67,8 @@ const ProductList = () => {
     <div>
       <Navbar onOpenCart={openCart} counts={count}/>
       <ProductDisplay  addToCart={addToCart} products={products}/>
-      {showCart && (
-        <Model carts={cart} popup={closeCart} removeitem={removeFromCart} />
+      {showCart && ReactDOM.createPortal(
+        <Model carts={cart} popup={closeCart} removeitem={removeFromCart} ></Model>,portal
 
       )}
     </div>
